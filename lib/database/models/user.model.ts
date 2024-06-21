@@ -1,53 +1,54 @@
 
 import { Schema, model, models } from "mongoose";
 
-export interface User extends Document {
-    clerkId: string;
-    email: string;
-    username: string;
-    firstName: string;
-    lastName: string;
-    planId?: number;
-    creditBalance?: number;
-    createdAt?: Date; 
-    updatedAt?: Date; 
+interface User {
+  clerkId: string;
+  email: string;
+  username: string;
+  photo: string;
+  firstName?: string;
+  lastName?: string;
+  planId?: number; // Default is 1
+  creditBalance?: number; // Default is 10
 }
 
 
 const UserSchema = new Schema({
-    clerkId:{
+    clerkId: {
         type: String,
         required: true,
-        unique: true
-    },
-    email:{
+        unique: true,
+      },
+      email: {
         type: String,
         required: true,
-        unique: true
-    },
-    username:{
+        unique: true,
+      },
+      username: {
         type: String,
         required: true,
-        unique: true
-    },
-    firstName:{
+        unique: true,
+      },
+      photo: {
         type: String,
-        // required: true
-    },
-    lastName:{
+        required: true,
+      },
+      firstName: {
         type: String,
-        // required: true
-    },
-    planId:{
+      },
+      lastName: {
+        type: String,
+      },
+      planId: {
         type: Number,
-        default: 1
-    },
-    creditBalance:{
+        default: 1,
+      },
+      creditBalance: {
         type: Number,
-        default: 10
-    },
+        default: 10,
+      },
 },{timestamps: true})
 
-const User = models?.User || model('Uset', UserSchema);
+const User = models?.User || model('User', UserSchema);
 
 export default User
