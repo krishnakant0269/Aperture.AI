@@ -1,54 +1,41 @@
-
 import { Schema, model, models } from "mongoose";
 
-interface User {
-  clerkId: string;
-  email: string;
-  username: string;
-  photo: string;
-  firstName?: string;
-  lastName?: string;
-  planId?: number; // Default is 1
-  creditBalance?: number; // Default is 10
-}
-
-
 const UserSchema = new Schema({
-    clerkId: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      username: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      photo: {
-        type: String,
-        required: true,
-      },
-      firstName: {
-        type: String,
-      },
-      lastName: {
-        type: String,
-      },
-      planId: {
-        type: Number,
-        default: 1,
-      },
-      creditBalance: {
-        type: Number,
-        default: 10,
-      },
-},{timestamps: true})
+  clerkId: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  photo: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+  },
+  lastName: {
+    type: String,
+  },
+  planId: {
+    type: Number,
+    default: 1,
+  },
+  creditBalance: {
+    type: Number,
+    default: 10,
+  },
+});
 
-const User = models?.User || model('User', UserSchema);
+const User = models?.User || model("User", UserSchema);
 
-export default User
+export default User;
