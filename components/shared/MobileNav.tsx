@@ -10,7 +10,7 @@ import {
   
 import Link from "next/link"
 import Image from "next/image"
-import { SignedIn, UserButton ,SignedOut} from "@clerk/nextjs"
+import { SignedIn, UserButton ,SignedOut, } from "@clerk/nextjs"
 import { navLinks } from "@/constants"
 import { usePathname } from "next/navigation"
 import { Button } from "../ui/button"
@@ -18,6 +18,7 @@ import { Button } from "../ui/button"
 const MobileNav = () => {
     const pathname = usePathname()
   return (
+    
     <header className="header">
         <Link href="/" className="flex items-centre gap-2 md:py-2">
         <Image

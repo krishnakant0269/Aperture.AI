@@ -1,9 +1,9 @@
 'use client'
 
-import React from 'react'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { navLinks } from '@/constants'
 import { link } from 'fs'
 import { usePathname } from 'next/navigation'
